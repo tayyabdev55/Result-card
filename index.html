@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Result Card</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Marks Form -->
+
     <div>
-        <h2>Reuslt Crad</h2>
+
+        <h2>Result Card</h2>
+
         <div>
+
             <form>
-                   <label for="Marks">English</label>
-                 <input type="text" placeholder="English Marks"> <br>
 
-                   <label for="Marks">Physics</label>
-                 <input type="text" placeholder="Physics"> <br>
+                <label for="english">English</label>
+                <input id="english" type="text" placeholder="English Marks">
+                <br>
 
-                   <label for="computer">Computer Science</label>
-                 <input id="computer" type="text" placeholder="Computer Science">
+                <label for="physics">Physics</label>
+                <input id="physics" type="text" placeholder="Physics">
+                <br>
 
-                   <label for="Marks">Math</label>
-                 <input type="text" placeholder="Math"><br>
+                <label for="computer">Computer Science</label>
+                <input id="computer" type="text" placeholder="Computer Science">
+                <br>
 
-                   <label for="Marks">Chemistry</label>
-                 <input type="text" placeholder="Chemistry"><br>
+                <label for="math">Math</label>
+                <input id="math" type="text" placeholder="Math">
+                <br>
 
-                  <label for="Marks">Urdu</label>
-                 <input type="text" placeholder="Urdu"><br>
+                <label for="chemistry">Chemistry</label>
+                <input id="chemistry" type="text" placeholder="Chemistry">
+                <br>
 
-                  <label for="Marks">Sindhi</label>
-                 <input type="text" placeholder="Sindhi">
+                <label for="urdu">Urdu</label>
+                <input id="urdu" type="text" placeholder="Urdu">
+                <br>
 
-                 <button>Check Reuslt</button>
- 
-             </form>
+                <label for="sindhi">Sindhi</label>
+                <input id="sindhi" type="text" placeholder="Sindhi">
+                <br>
+
+                <button type="submit" id="checkResult">
+                Check Result
+               </button>
+            </form>
+
         </div>
+
     </div>
+    </form>
+
+
+    
+
+    <div class="result-page">
+
+        <h2>Student Result</h2>
+
+        <div class="result-card">
+
+            <h3>Academic Result</h3>
+
+            <p>
+                Total Marks:
+                <span id="total"></span>
+            </p>
+
+            <p>
+                Percentage:
+                <span id="percentage"></span>
+            </p>
+
+            <p>
+                Grade:
+                <span id="grade"></span>
+            </p>
+
+            
+
+    </div>
+
     
 
 
-
     <script src="./app.js"></script>
+
 </body>
+
 </html>

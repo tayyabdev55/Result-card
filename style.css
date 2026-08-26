@@ -1,110 +1,713 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
+
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.96),
+            rgba(250, 248, 245, 0.96)
+        ),
+        radial-gradient(
+            circle at top right,
+            #8f1537 0%,
+            transparent 35%
+        );
+
+    font-family: "Inter", sans-serif;
+
+    color: #1f1f1f;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    padding: 30px 15px;
+
+    padding: 40px 20px;
+
+    gap: 40px;
+
+    overflow-x: hidden;
 }
+
+
+/* =========================
+   MAIN CONTAINERS
+========================= */
 
 body > div {
+
     width: 100%;
-    max-width: 550px;
+
+    max-width: 650px;
+
 }
+
+
+/* =========================
+   HEADING
+========================= */
 
 h2 {
+
     text-align: center;
-    color: white;
-    font-size: 32px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+
+    font-family: "Libre Baskerville", serif;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #750014;
+
+    margin-bottom: 28px;
+
+    position: relative;
 }
 
-body > div > div {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 3px;
+
+    background: #750014;
+
+    margin: 12px auto 0;
 }
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+body > div:first-child > div {
+
+    background: #ffffff;
+
+    padding: 38px;
+
+    border-radius: 14px;
+
+    border-top: 6px solid #750014;
+
+    box-shadow:
+
+        0 15px 40px rgba(0, 0, 0, 0.08),
+
+        0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   FORM
+========================= */
 
 form {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 }
 
+
+/* =========================
+   LABEL
+========================= */
+
 label {
-    color: #333;
-    font-size: 15px;
+
+    font-size: 14px;
+
     font-weight: 600;
+
+    color: #333;
+
     margin-top: 8px;
 }
 
+
+/* =========================
+   INPUT
+========================= */
+
 input {
+
     width: 100%;
+
     padding: 13px 15px;
-    border: 2px solid #e1e1e1;
-    border-radius: 10px;
-    outline: none;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 7px;
+
+    background: #fafafa;
+
+    font-family: "Inter", sans-serif;
+
     font-size: 15px;
-    transition: 0.3s;
-    background: #f9f9f9;
+
+    color: #222;
+
+    outline: none;
+
+    transition:
+
+        border-color 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        background 0.25s ease;
 }
 
-input:focus {
-    border-color: #667eea;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
-}
 
 input::placeholder {
+
     color: #999;
 }
 
-button {
-    margin-top: 20px;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+
+input:focus {
+
+    background: #ffffff;
+
+    border-color: #750014;
+
+    box-shadow:
+
+        0 0 0 4px rgba(117, 0, 20, 0.08);
 }
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #750014;
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+
+        background 0.25s ease,
+
+        transform 0.2s ease,
+
+        box-shadow 0.25s ease;
+}
+
 
 button:hover {
+
+    background: #580010;
+
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+
+    box-shadow:
+
+        0 8px 20px rgba(117, 0, 20, 0.22);
 }
 
+
 button:active {
+
     transform: translateY(0);
 }
 
-/* Mobile Responsive */
-@media (max-width: 500px) {
+
+/* =========================
+   OLD RESULT
+========================= */
+
+#result {
+
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-top: 5px solid #750014;
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   RESULT PAGE
+========================= */
+
+.result-page {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 35px auto 0;
+}
+
+
+.result-page h2 {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border-top: 5px solid #750014;
+
+    box-shadow:
+
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+}
+
+
+.result-card h3 {
+
+    color: #750014;
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   RESULT ROWS
+========================= */
+
+.result-card p {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 15px;
+
+    margin: 10px 0;
+
+    background: #f7f7f7;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    gap: 15px;
+}
+
+
+.result-card p span {
+
+    color: #750014;
+
+    font-weight: bold;
+
+    text-align: right;
+}
+
+
+/* =========================
+   PASS / FAIL
+========================= */
+
+#status {
+
+    width: fit-content;
+
+    margin: 20px auto;
+
+    padding: 9px 25px;
+
+    border-radius: 30px;
+
+    background: #e8f7ed;
+
+    color: #187a3d;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
     body {
-        padding: 20px 12px;
+
+        gap: 25px;
+
+        padding: 30px 15px;
     }
+
+
+    body > div {
+
+        max-width: 500px;
+    }
+
+
+    body > div:first-child > div {
+
+        padding: 30px;
+    }
+
+
+    .result-page {
+
+        max-width: 500px;
+    }
+
+
+    .result-card {
+
+        padding: 25px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        width: 100%;
+
+        min-height: 100vh;
+
+        padding: 25px 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-start;
+
+        align-items: center;
+
+        gap: 30px;
+
+        overflow-x: hidden;
+    }
+
+
+    body > div {
+
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* Form */
+
+    body > div:first-child {
+
+        width: 100%;
+    }
+
+
+    body > div:first-child > div {
+
+        width: 100%;
+
+        padding: 25px 20px;
+
+        border-radius: 12px;
+
+        border-top-width: 5px;
+    }
+
+
+    /* Heading */
 
     h2 {
-        font-size: 26px;
+
+        font-size: 27px;
+
+        margin-bottom: 22px;
     }
 
-    body > div > div {
-        padding: 25px 20px;
+
+    h2::after {
+
+        width: 55px;
+
+        height: 3px;
     }
+
+
+    /* Inputs */
 
     input {
-        padding: 12px;
+
+        width: 100%;
+
+        padding: 12px 13px;
+
+        font-size: 14px;
     }
+
+
+    /* Button */
+
+    button {
+
+        width: 100%;
+
+        padding: 13px;
+
+        font-size: 14px;
+    }
+
+
+    /* Result */
+
+    .result-page {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin: 0;
+    }
+
+
+    .result-page h2 {
+
+        font-size: 27px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .result-card {
+
+        width: 100%;
+
+        padding: 22px 18px;
+
+        border-radius: 12px;
+
+        border-top-width: 5px;
+    }
+
+
+    .result-card h3 {
+
+        font-size: 20px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* 
+       Mobile par label aur value
+       ek ke neeche ek
+    */
+
+    .result-card p {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        gap: 7px;
+
+        padding: 13px;
+
+        margin: 10px 0;
+
+        font-size: 14px;
+    }
+
+
+    .result-card p span {
+
+        width: 100%;
+
+        text-align: left;
+
+        font-size: 16px;
+    }
+
+
+    /* Status */
+
+    #status {
+
+        margin: 20px auto;
+
+        padding: 8px 22px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    body {
+
+        padding: 20px 10px;
+
+        gap: 25px;
+    }
+
+
+    h2 {
+
+        font-size: 23px;
+
+        margin-bottom: 18px;
+    }
+
+
+    body > div:first-child > div {
+
+        padding: 20px 15px;
+    }
+
+
+    label {
+
+        font-size: 13px;
+    }
+
+
+    input {
+
+        padding: 11px;
+
+        font-size: 13px;
+    }
+
+
+    button {
+
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+
+    .result-page h2 {
+
+        font-size: 23px;
+    }
+
+
+    .result-card {
+
+        padding: 18px 14px;
+    }
+
+
+    .result-card h3 {
+
+        font-size: 18px;
+    }
+
+
+    .result-card p {
+
+        padding: 12px;
+
+        font-size: 13px;
+    }
+
+
+    .result-card p span {
+
+        font-size: 15px;
+    }
+
+
+    #status {
+
+        font-size: 12px;
+
+        padding: 8px 18px;
+    }
+
 }
