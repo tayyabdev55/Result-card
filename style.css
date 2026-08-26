@@ -96,7 +96,10 @@ h2::after {
    FORM CARD
 ========================= */
 
-body > div:first-child > div {
+body > div:first-child > div {  
+
+    width: 600px ;
+    
 
     background: #ffffff;
 
@@ -281,6 +284,7 @@ button:active {
 ========================= */
 
 .result-page {
+    
 
     width: 100%;
 
@@ -391,6 +395,9 @@ button:active {
     text-align: center;
 }
 
+.result-page  {
+    animation: resultShow 0.7s ease;
+}
 
 /* =========================================
    TABLET

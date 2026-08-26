@@ -2,11 +2,8 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit", function (event) {
 
-    // Page reload hone se rokna
     event.preventDefault();
 
-
-    // Marks lena
 
     let english = Number(document.querySelector("#english").value);
 
@@ -23,8 +20,6 @@ form.addEventListener("submit", function (event) {
     let sindhi = Number(document.querySelector("#sindhi").value);
 
 
-    // Total marks
-
     let total =
         english +
         physics +
@@ -35,12 +30,8 @@ form.addEventListener("submit", function (event) {
         sindhi;
 
 
-    // Percentage
-
     let percentage = (total / 700) * 100;
 
-
-    // Grade
 
     let grade;
 
@@ -71,37 +62,34 @@ form.addEventListener("submit", function (event) {
     }
 
 
-    // Pass / Fail
-
     let status;
 
     if (percentage >= 40) {
 
-        status = "PASS";
+        status = "Pass";
 
     } else {
 
-        status = "FAIL";
+        status = "Fail";
 
     }
 
 
-    // Result show karna
-
     document.querySelector("#total").innerHTML =
         total + " / 700";
+
 
     document.querySelector("#percentage").innerHTML =
         percentage.toFixed(2) + "%";
 
+
     document.querySelector("#grade").innerHTML =
         grade;
 
-    document.querySelector("#status").innerHTML =
+
+    document.querySelector("#status").innerHTML 
         status;
 
-
-    // Result card show
 
     document.querySelector(".result-page").style.display = "block";
 
